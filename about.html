@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Tradd Horne — Podiatrist, developer, and distance runner based in Brisbane, Australia.">
+    <title>About — Tradd Horne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon"></div>
+                <span class="nav-logo-text">Tradd Horne</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">Menu</button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="mailto:thetraddhorne@gmail.com" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>About</h1>
+                <p class="hero-subtitle">I'm a podiatrist and developer based in Brisbane. I spend my clinical days treating patients and my evenings writing the software I wish existed when I was starting out.</p>
+                <p class="hero-subtitle">This page is a slightly longer version of that story — where I work, what I'm building, and why I keep both feet in both camps.</p>
+            </div>
+            <div class="hero-image">
+                <img src="images/headshot.jpg" alt="Tradd Horne">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>The Clinical Side</h2>
+            </div>
+            <div class="narrative">
+                <p>I'm a qualified podiatrist running <a href="https://principalpodiatry.com.au" target="_blank" rel="noopener noreferrer" class="inline-link">Principal Podiatry</a> in Brisbane. Most of my week is patient-facing — musculoskeletal assessments, orthotic therapy, diabetic foot care, nail surgery, and the steady stream of running injuries I seem to attract (possibly karmic).</p>
+                <p>Alongside my Brisbane practice I contract to BNMAC clinics in Casino and Grafton, covering allied health needs for regional NSW communities where consistent podiatry access is genuinely hard to come by. That work keeps me honest about what rural Australia actually looks like — long days, mixed caseloads, and patients who've been waiting months for an appointment.</p>
+                <p>I trained as a clinician first. Everything I build for healthcare has that frame baked in: AHPRA compliance isn't an afterthought, patient trust isn't a growth hack, and copy that sounds like a clinician wrote it is not a coincidence.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>The Software Side</h2>
+            </div>
+            <div class="narrative">
+                <p>I started writing code to scratch clinical itches — a better way to handle notes, a better way to help patients find good practitioners, a better way for small clinics to manage their Google reviews without tripping AHPRA. Every project I've shipped came from a problem I hit in clinic first.</p>
+                <p>Today I'm running two live SaaS products and a handful of client sites on Django, PostgreSQL, Docker Compose and DigitalOcean. I deploy manually — no over-engineered pipelines — and I keep dev and prod configurations cleanly separated. It's a small, deliberate stack that's cheap to run and easy to reason about at 10pm when something breaks.</p>
+                <p>The goal is passive-income SaaS that supports the clinical work, and vice versa: clinical work keeps me grounded in real user problems, and the software work keeps me from becoming the kind of clinician who thinks the current state of healthcare tech is acceptable.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Current Projects</h2>
+            </div>
+            <div class="about-details">
+                <ul>
+                    <li><strong>Therapy Online Australia</strong> — Practitioner growth platform for Australian psychologists. AHPRA-verified directory with referral attribution tracking. Django, PostgreSQL, DigitalOcean.</li>
+                    <li><strong>TrueBlueReview</strong> — AHPRA-compliant Google review management designed specifically for registered health practitioners. Solves a compliance problem the big review platforms quietly ignore.</li>
+                    <li><strong>Principal Podiatry</strong> — My podiatry practice in Brisbane, plus ongoing contract work at BNMAC Casino &amp; Grafton.</li>
+                    <li><strong>Medical &amp; allied-health websites</strong> — Custom Django sites I build for clinics and consultants. See <a href="services.html" class="inline-link">Services</a>.</li>
+                    <li><strong>Marathon training</strong> — Structured sessions Wed / Thu / Sun, currently inside a 4-week block aimed at a sub-3 hour finish in April 2026.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Tools &amp; Stack</h2>
+            </div>
+            <div class="narrative">
+                <h3>Backend</h3>
+                <p>Python, Django 4.2+, Django REST Framework, PostgreSQL in production, SQLite for dev. Gunicorn behind Nginx, Whitenoise for static files.</p>
+                <h3>Infrastructure</h3>
+                <p>DigitalOcean droplets, Docker Compose with separate <code>docker-compose.dev.yml</code> and <code>docker-compose.prod.yml</code> files, Nginx as reverse proxy, Let's Encrypt for TLS. Manual deploys — intentional — via <code>docker compose up -d</code>. Config via python-decouple and <code>.env</code> files, never inline secrets.</p>
+                <h3>Frontend</h3>
+                <p>Hand-written HTML and CSS, vanilla JS for anything interactive, progressive enhancement by default. GSAP when animation earns its keep. No framework tax.</p>
+                <h3>Workflow</h3>
+                <p>Git, feature branches, never to main. PRs via <code>gh</code> CLI. Tests for anything touching billing, auth, or data integrity. Claude Code as a daily driver for review, refactor and grunt work.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Running</h2>
+            </div>
+            <div class="narrative">
+                <p>Distance running is the third leg of the stool. I'm inside a structured block chasing a sub-3 hour marathon — Wednesday intervals, Thursday tempo, Sunday long run. It's where I work out the problems I can't solve at a desk, and it's a useful reminder that consistent, unglamorous effort compounds in both training and business.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+            </div>
+            <div class="contact-info">
+                <p>Happy to talk about clinic websites, health-tech SaaS, running, or the Queensland coffee situation.</p>
+                <p><a href="mailto:thetraddhorne@gmail.com">thetraddhorne@gmail.com</a></p>
+                <p><a href="https://linkedin.com/in/traddhorne" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot; <a href="https://github.com/Tradd-Horne" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-credit">&copy; Tradd Horne 2026</p>
+            <div class="footer-social">
+                <a href="https://github.com/Tradd-Horne" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/traddhorne" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/traddhorne" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://x.com/traddhorne" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X / Twitter">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('open');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,999 @@
+/* ==========================================================================
+   Jon Imperial-inspired Design System
+   Fonts: Abel (body), Roboto Condensed (headings/nav)
+   Colors: White bg, black text, minimal palette
+   Layout: 1100px max-width, generous whitespace
+   ========================================================================== */
+
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+    --text-heading: rgba(0, 0, 0, 0.9);
+    --text-sub: rgba(0, 0, 0, 0.75);
+    --text-nav: #000000;
+    --divider: #e8e8e8;
+    --max-width: 1100px;
+    --font-body: "Abel", sans-serif;
+    --font-heading: "Roboto Condensed", sans-serif;
+    --transition: 0.3s ease;
+}
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    color: var(--text-heading);
+}
+
+h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin-bottom: 0.3em;
+}
+
+h2 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+h3 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: var(--text-sub);
+    line-height: 1.5;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity var(--transition);
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   Header / Navbar
+   ========================================================================== */
+
+.navbar {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 17px;
+    position: relative;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0 0;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.nav-logo-icon {
+    width: 36px;
+    height: 36px;
+    border: 2.5px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    position: relative;
+}
+
+.nav-logo-icon::before {
+    content: 'TH';
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.nav-logo-icon::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 4px;
+    width: 14px;
+    height: 2.5px;
+    background: #000;
+}
+
+.nav-logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-nav);
+    text-decoration: none;
+    transition: opacity var(--transition);
+    padding: 2px 0;
+    border-bottom: 1px solid transparent;
+}
+
+.nav-link:hover {
+    opacity: 0.6;
+}
+
+.nav-link.active {
+    border-bottom-color: #000;
+}
+
+/* Mobile menu button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   Main Content
+   ========================================================================== */
+
+.main-content {
+    flex: 1;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 77px 17px 0;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 0 0 40px;
+}
+
+.hero-text {
+    padding-top: 20px;
+}
+
+.hero-text h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    color: var(--text-heading);
+    margin-bottom: 8.64px;
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text-sub);
+    line-height: 1.5;
+    margin-top: 17.6px;
+    margin-bottom: 24px;
+}
+
+.hero-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Social Icons in Hero */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 4px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: #000;
+    transition: opacity var(--transition);
+}
+
+.social-icon:hover {
+    opacity: 0.5;
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* ==========================================================================
+   Content Sections
+   ========================================================================== */
+
+.section {
+    padding: 50px 0;
+    border-top: 1px solid var(--divider);
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text-heading);
+}
+
+/* ==========================================================================
+   Project Cards
+   ========================================================================== */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition);
+}
+
+.project-card:hover {
+    opacity: 0.7;
+}
+
+.project-card-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #f5f5f5;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.project-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text-heading);
+    margin-bottom: 6px;
+}
+
+.project-card p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Blog List
+   ========================================================================== */
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog-item {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.blog-date {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: var(--text-sub);
+    min-width: 80px;
+    text-transform: uppercase;
+}
+
+.blog-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--text-heading);
+    text-decoration: none;
+    transition: opacity var(--transition);
+}
+
+.blog-title:hover {
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   About Page
+   ========================================================================== */
+
+.about-details {
+    margin-top: 0;
+}
+
+.about-details p,
+.about-details li {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-sub);
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+}
+
+.about-details ul {
+    padding-left: 0;
+}
+
+.about-details li {
+    margin-bottom: 8px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.about-details li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 4px;
+    height: 4px;
+    background: var(--text-sub);
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+
+.contact-info {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    letter-spacing: 1px;
+}
+
+.contact-info a {
+    color: var(--text);
+    border-bottom: 1px solid var(--divider);
+    transition: border-color var(--transition);
+}
+
+.contact-info a:hover {
+    border-color: var(--text);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Empty State
+   ========================================================================== */
+
+.empty-state {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.empty-state p {
+    font-family: var(--font-body);
+    color: var(--text-sub);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Page Headers
+   ========================================================================== */
+
+.page-header {
+    padding: 0 0 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--divider);
+}
+
+.page-header h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text-heading);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 17px;
+    margin-top: auto;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-top: 2px solid var(--divider);
+}
+
+.footer-credit {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-social .social-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.footer-social .social-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ==========================================================================
+   Mobile Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 20px 30px;
+        gap: 16px;
+        z-index: 100;
+        border: 1px solid var(--divider);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-text {
+        order: 1;
+        padding-top: 0;
+    }
+
+    .hero-image {
+        order: 2;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        padding-top: 30px;
+    }
+
+    .nav-logo-text {
+        font-size: 1.3rem;
+    }
+
+    .main-content {
+        padding-top: 50px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        gap: 20px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Buttons / CTAs
+   ========================================================================== */
+
+.hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 22px;
+    text-decoration: none;
+    transition: all var(--transition);
+    cursor: pointer;
+    border: 2px solid #000;
+}
+
+.btn-primary {
+    background: #000;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #fff;
+    color: #000;
+    opacity: 1;
+}
+
+.btn-secondary {
+    background: #fff;
+    color: #000;
+}
+
+.btn-secondary:hover {
+    background: #000;
+    color: #fff;
+    opacity: 1;
+}
+
+.section-more {
+    margin-top: 24px;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.section-more a,
+.inline-link {
+    color: var(--text);
+    border-bottom: 1px solid var(--text);
+    padding-bottom: 2px;
+}
+
+.section-more a:hover,
+.inline-link:hover {
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   Narrative / Long-form Text
+   ========================================================================== */
+
+.narrative {
+    max-width: 760px;
+}
+
+.narrative p {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--text-sub);
+    line-height: 1.75;
+    letter-spacing: 0.3px;
+    margin-bottom: 1.2rem;
+}
+
+.narrative h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--text-heading);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* ==========================================================================
+   Portfolio (Projects Page) Cards
+   ========================================================================== */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 32px;
+}
+
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity var(--transition);
+}
+
+.portfolio-card:hover {
+    opacity: 0.85;
+}
+
+.portfolio-card-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #f5f5f5;
+    overflow: hidden;
+    margin-bottom: 18px;
+    border: 1px solid var(--divider);
+}
+
+.portfolio-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.portfolio-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+    text-transform: none;
+}
+
+.portfolio-card .portfolio-meta {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.portfolio-card p {
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    color: var(--text-sub);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.portfolio-card .portfolio-stack {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    margin-top: auto;
+    padding-top: 4px;
+}
+
+.portfolio-card .portfolio-link {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text);
+    border-bottom: 1px solid var(--text);
+    padding-bottom: 2px;
+    display: inline-block;
+    margin-top: 6px;
+    align-self: flex-start;
+}
+
+/* ==========================================================================
+   Services Page
+   ========================================================================== */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.service-card {
+    border: 1px solid var(--divider);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: var(--text-heading);
+    margin-bottom: 14px;
+    text-transform: none;
+}
+
+.service-card .price {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--divider);
+}
+
+.service-card ul {
+    padding-left: 0;
+}
+
+.service-card li {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    line-height: 1.6;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.service-card li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--font-heading);
+    color: var(--text);
+}
+
+.process-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.process-step {
+    border-top: 2px solid #000;
+    padding-top: 16px;
+}
+
+.process-step .step-num {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.process-step h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    color: var(--text-heading);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+
+.process-step p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.why-me-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.why-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--text-heading);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.why-card p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-sub);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.cta-banner {
+    border: 2px solid #000;
+    padding: 40px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta-banner h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--text-heading);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+
+.cta-banner p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-sub);
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Responsive tweaks
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .process-list {
+        grid-template-columns: 1fr 1fr;
+    }
+    .why-me-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .process-list {
+        grid-template-columns: 1fr;
+    }
+    .cta-banner {
+        padding: 28px 20px;
+    }
+}
+
+/* ==========================================================================
+   Selection & Focus
+   ========================================================================== */
+
+::selection {
+    background: #000;
+    color: #fff;
+}
+
+:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
